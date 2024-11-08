@@ -5,7 +5,7 @@
   echo "\n";
   // 問2
   $name = "Satoshi Kuroda";
-  echo "Welcome ". $name;
+  echo "Welcome ". $name; // 「”文字列”. 変数
   echo "\n";
   // 問3
   $apple_price = 200;
