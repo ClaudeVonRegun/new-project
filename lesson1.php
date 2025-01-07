@@ -3,10 +3,13 @@
   $message = "Hello World";
   echo $message;
   echo "\n";
+
   // 問2
   $name = "Satoshi Kuroda";
-  echo "Welcome ". $name;
+  echo "Welcome ". $name; 
+  // 「”文字列”. 変数」
   echo "\n";
+
   // 問3
   $apple_price = 200;
   $apple_quantity = 3;
@@ -15,10 +18,12 @@
   $total = $apple_price * $apple_quantity + $orange_price * $orange_quantity;
   echo $total."円";
   echo "\n";
+
   // 問４
   $colors = ["red", "blue", "green"];
   echo $colors[1];
   echo "\n";
+  
   // 問５
   $members =[
     ["name" => "佐藤", "age" => 36, "job" => "営業"],
