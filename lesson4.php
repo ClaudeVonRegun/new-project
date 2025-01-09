@@ -14,7 +14,8 @@ for($i = 1; $i <= 100; $i++){
     $sum += $i;
   }
 }
-echo $sum. "\n"; 
+echo $sum. "\n";
+
 
 // 問３
 for($i = 1; $i <= 100; $i++){
@@ -45,19 +46,96 @@ for($i = 0; $i < 5; $i++){
 }
 echo $max. "\n";
 
-//問５
-$text1 = "abcdefghi";
-$text2 = "abcdedcba";
+// 問５
 
-if($text1 === strrev($text1)){
-  echo "これは回文です。";
-}else{
-  echo "これは回文ではありません。";
+$test1 = "level";
+$test2 = "cool";
+$test3 = "Madam";
+
+function isPalindrome($str){
+  $chars = str_split($str);
+  $length =count($chars);
+  $i = 0;
+  $j = $length - 1;
+  for($i=0; $i<$j; $i++, $j--){
+    if($chars[$i] !== $chars[$j]){
+      return false;
+    }
+  }return true;  
 }
+
+if(isPalindrome($test1)){
+  echo $test1."は回文です";
+}else{
+  echo $test1."は回文ではありません";
+};
+
 echo "\n";
-if($text2 === strrev($text2)){
-  echo "これは回文です。";
+
+if(isPalindrome($test2)){
+  echo $test2."は回文です";
 }else{
-  echo "これは回文ではありません。";
-}
+  echo $test2."は回文ではありません";
+};
+
+echo "\n";
+
+if(isPalindrome($test3)){
+  echo $test3."は回文です";
+}else{
+  echo $test3."は回文ではありません";
+};
+
+echo "\n";
+
+// パターン２
+
+// function isPalindrome2($str){
+//   $i = 0;
+//   $j = strlen($str) - 1;
+//   for($i=0; $i<$j; $i++, $j--){
+//     if($str[$i] !== $str[$j]){
+//       return false;
+//     }
+//   }return true;   
+// }
+
+// if(isPalindrome2($test1)){
+//   echo $test1."は回文です";
+// }else{
+//   echo $test1."は回文ではありません";
+// };
+
+// echo "\n";
+
+// if(isPalindrome2($test2)){
+//   echo $test2."は回文です";
+// }else{
+//   echo $test2."は回文ではありません";
+// };
+
+// echo "\n";
+
+// if(isPalindrome2($test3)){
+//   echo $test3."は回文です";
+// }else{
+//   echo $test3."は回文ではありません";
+// };
+
+// echo "\n";
+
+// パターン３
+
+// if($text1 === strrev($text1)){
+//   echo "これは回文です。";
+// }else{
+//   echo "これは回文ではありません。";
+// }
+// echo "\n";
+// if($text2 === strrev($text2)){
+//   echo "これは回文です。";
+// }else{
+//   echo "これは回文ではありません。";
+// }
+
 ?>
