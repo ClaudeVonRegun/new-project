@@ -1,14 +1,11 @@
 <?php
 
-//問１ 
-$A = mt_rand();;
-$B = mt_rand();;
-echo $A;
+//問１
+$A = mt_rand();
+$B = mt_rand();
+echo "変数Aは".$A."です";
 echo "\n";
-echo $B;
-echo "\n";
-echo max($A,$B);
-// max()で最大値を調べることができる。
+echo "変数Bは".$B."です";
 echo "\n";
 if($A > $B){
   echo "Aの方が大きいです。";
@@ -34,7 +31,7 @@ echo "\n";
 
 // 問３
 $score = mt_rand(0, 100);
-echo "点数は{$score}点です。";
+echo "点数は".$score."点です。";
 echo "\n";
 if($score === 100){
   echo "AA";
@@ -60,7 +57,7 @@ if ($rand2 > 0){
   echo "正の数です。";
 }elseif($rand2 < 0){
   echo "負の数です。";
-}elseif($rand2 = 0){
+}elseif($rand2 === 0){
   echo "ゼロです。";
 }
 echo "\n";
@@ -69,7 +66,7 @@ echo "\n";
 $age = mt_rand(0, 150);
 echo $age;
 echo "\n";
-if($age <= 5 || $age > 70){
+if($age >= 0 && $age <= 5 || $age > 70){
   echo "無料です";
 }elseif($age >= 6 && $age <= 12){
   echo "200円です。" ;
