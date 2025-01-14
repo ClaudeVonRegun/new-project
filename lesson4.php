@@ -51,9 +51,15 @@ echo $max. "\n";
 $test1 = "level";
 $test2 = "cool";
 $test3 = "Madam";
+$test4 = "しんぶんし";
+$test5 = "せんせい";
+$test6 = "山本山";
 
 function isPalindrome($str){
-  $chars = str_split($str);
+  $chars = mb_str_split($str);
+  // $chars = str_split($str);
+  // str_splitだと日本語の時にバイト数を参照するため失敗してしまうので
+  // mb_str_splitを使う(["し","ん","ぶ","ん","し"])のイメージ
   $length =count($chars);
   $i = 0;
   $j = $length - 1;
@@ -61,7 +67,8 @@ function isPalindrome($str){
     if($chars[$i] !== $chars[$j]){
       return false;
     }
-  }return true;  
+  }
+  return true;
 }
 
 if(isPalindrome($test1)){
@@ -88,17 +95,45 @@ if(isPalindrome($test3)){
 
 echo "\n";
 
+if(isPalindrome($test4)){
+  echo $test4."は回文です";
+}else{
+  echo $test4."は回文ではありません";
+};
+
+echo "\n";
+
+if(isPalindrome($test5)){
+  echo $test5."は回文です";
+}else{
+  echo $test5."は回文ではありません";
+};
+
+echo "\n";
+
+if(isPalindrome($test6)){
+  echo $test6."は回文です";
+}else{
+  echo $test6."は回文ではありません";
+};
+
+echo "\n";
+
 // パターン２
 
 // function isPalindrome2($str){
 //   $i = 0;
 //   $j = strlen($str) - 1;
 //   for($i=0; $i<$j; $i++, $j--){
-//     if($str[$i] !== $str[$j]){
+//     if($str[$i] != $str[$j]){
 //       return false;
 //     }
-//   }return true;   
+//   }
+//   return true;   
 // }
+// バイト数で計算してしまうため、不適切。
+// $str[$i] != $str[$j] ではバイト数の関係でできない。
+
 
 // if(isPalindrome2($test1)){
 //   echo $test1."は回文です";
